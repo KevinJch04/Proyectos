@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Consultas Flia. Chipana</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="consultas-container" id="consultas-container">
+  <h2>Consultas disponibles</h2>
+
+  <div class="tarjetas-consultas">
+    <div class="tarjeta-consulta" onclick="mostrarConsulta('productosproveedores')">
+      <h3>Productos con Proveedores</h3>
+      <p>Ver todos los productos y sus proveedores.</p>
+    </div>
+
+    <div class="tarjeta-consulta" onclick="mostrarConsulta('productosmasvendidos')">
+      <h3>Producto más vendido</h3>
+      <p>Consultar el producto más vendido en un rango de fechas.</p>
+    </div>
+
+    <div class="tarjeta-consulta" onclick="mostrarConsulta('ventaporfecha')">
+      <h3>Ventas por Fecha</h3>
+      <p>Filtrar las ventas realizadas entre dos fechas.</p>
+    </div>
+
+    <div class="tarjeta-consulta" onclick="mostrarConsulta('productoproveedor')">
+      <h3>Productos por Proveedor</h3>
+      <p>Ver productos según un proveedor seleccionado.</p>
+    </div>
+
+    <div class="tarjeta-consulta" onclick="mostrarConsulta('productofechacaducidad')">
+      <h3>Productos por Fecha de Caducidad</h3>
+      <p>Filtrar productos que vencen en un rango de fechas.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- Contenedor donde se mostrarán los formularios y resultados -->
+<div id="consulta-detalle" class="consulta-detalle"></div>
+
+
+</body>
+</html>

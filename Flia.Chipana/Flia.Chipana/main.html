@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flia.Chipana</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="body-main">
+<div class="scale-wrapper-main">
+    <!-- PANEL DE NAVEGACIÓN -->
+    <div class="panel-navegacion">            
+        <img src="resources/main/patron.png" alt="patron" id="patron-top-main">
+
+        <div class="panel-content"> <!-- contenedor para escalar -->
+            <img src="resources/main/logo-FliaChipana.png" alt="logo-FliaChipana" id="logo-FliaChipana">
+            <nav>
+                <a href="#" onclick="cargarModulo('ventas.html')" class="vendedor-only"><i class="fa fa-shopping-cart"></i> Ventas</a>
+                <a href="#" onclick="cargarModulo('productos.html')" class="vendedor-only"><i class="fa fa-shopping-bag"></i> Productos</a>
+                <a href="#" onclick="cargarModulo('proveedores.html')" class="admin-only"><i class="fa fa-truck"></i> Proveedores</a>
+                <a href="#" onclick="cargarModulo('clientes.html')" class="vendedor-only"><i class="fa fa-users"></i> Clientes</a>
+                <a href="#" onclick="cargarModulo('formaspago.html')" class="admin-only"><i class="fa fa-dollar-sign"></i> Formas Pago</a>   
+                <a href="#" onclick="cargarModulo('consultas.html')" class="admin-only"><i class="fa-regular fa-clipboard"></i> Consultas</a>
+                <a href="#" id="btn-cerrar-sesion"><i class="fa fa-sign-out-alt"></i> Cerrar sesión</a>
+            </nav>
+        </div>       
+        <img src="resources/main/patron.png" alt="patron" id="patron-botton-main">
+
+    </div>
+
+    <!-- PANEL PRINCIPAL -->
+    <main id="main-principal">
+        <div  id="contenido" class="main-content"> <!-- contenedor dinámico -->
+            <h4>Bienvenidos</h4>
+            <p>Contenido principal del sitio.</p>
+        </div>
+    </main>
+</div>
+
+<script src="js/config.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+
+<script src="js/auth.js" defer></script>
+<script src="js/cargarModulo.js" defer></script>
+<script src="js/buscadorDinamico.js" defer></script>
+<script src="js/consultas.js" defer></script>
+
+<script src="js/ABMClientes.js" defer></script>
+<script src="js/ABMFormasPago.js" defer></script>
+<script src="js/ABMProveedores.js" defer></script>
+<script src="js/ABMProductos.js" defer></script>
+<script src="js/ABMVentas.js" defer></script>
+<script src="js/ABMDetalleVenta.js" defer></script>
+<script src="js/ABMDetalleFormaPago.js" defer></script>
+
+<script src="js/Tikect.js" defer></script>
+
+</body>
+</html>

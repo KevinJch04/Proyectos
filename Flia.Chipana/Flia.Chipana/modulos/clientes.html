@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Clientes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="module-container">
+
+    <!-- HEADER -->
+      <div class="module-header">
+        <h2>CLIENTES</h2>
+        <div class="search-add">
+            <input type="text" placeholder="Buscar cliente" class="search-bar">
+            <button class="btn-add">Agregar items</button>
+        </div>
+    </div>
+
+    <!-- TABLA -->
+    <div class="table-scroll-container">
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Teléfono</th>
+            <th>Dirección</th>
+            <th>Email</th>
+            <th>Deuda</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-clientes"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- PANEL LATERAL AGREGAR -->
+  <div id="overlay" class="overlay"></div>
+  <div id="panel-agregar" class="side-panel">
+    <div class="side-panel-header">
+      <h3><i class="fa-solid fa-user-plus"></i> Agregar Nuevo Cliente</h3>
+      <button id="btn-cerrar-panel" class="btn-close">&times;</button>
+    </div>
+    <form id="form-agregar-cliente" class="form-agregar">
+      <input type="text" name="nombre" placeholder="Nombre" required>
+      <input type="text" name="apellido" placeholder="Apellido" required>
+      <input type="number"  min="0"  oninput="this.value = this.value.replace(/[^0-9]/g,'').slice(0,12);"  name="telefono" placeholder="Teléfono" required>
+      <input type="text" name="direccion" placeholder="Dirección" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="number"  min="0"   value="0" oninput="this.value = this.value.replace(/[^0-9]/g,'');" name="deuda" placeholder="Deuda">
+      <button type="submit" class="btn-submit">Agregar</button>
+    </form>
+  </div>
+<div id="mensaje-toast"></div>
+
+<!-- PANEL LATERAL EDITAR -->
+<div id="panel-editar" class="side-panel">
+  <div class="side-panel-header">
+    <h3><i class="fa-solid fa-user-pen"></i> Editar Cliente</h3>
+    <button id="btn-cerrar-panel-editar" class="btn-close">&times;</button>
+  </div>
+  <form id="form-editar-cliente" class="form-agregar">
+    <input type="hidden" name="id_cliente" />
+
+    <label for="nombre">Nombre</label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <label for="apellido">Apellido</label>
+    <input type="text" id="apellido" name="apellido" required>
+
+    <label for="telefono">Teléfono</label>
+    <input type="number" id="telefono" name="telefono" min="0" oninput="this.value = this.value.replace(/[^0-9]/g,'').slice(0,12);" required>
+
+    <label for="direccion">Dirección</label>
+    <input type="text" id="direccion" name="direccion" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="deuda">Deuda</label>
+    <input type="text" id="deuda" name="deuda" oninput="validarNumero(this)" required>
+
+    <button type="submit" class="btn-submit">Actualizar</button>
+  </form>
+</div>
+
+
+
+
+<div id="confirmacion-simple">
+  <p>¿Querés eliminar al cliente "<strong><span id="nombre-cliente-eliminar"></span></strong>"?</p>
+  <button id="btn-si">Sí</button>
+  <button id="btn-no">No</button>
+</div>
+
+</body>
+</html>

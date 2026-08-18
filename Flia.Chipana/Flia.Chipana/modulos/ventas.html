@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ventas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="module-container">
+
+    <!-- HEADER -->
+    <div class="module-header">
+        <h2>VENTAS</h2>
+        <div class="search-add">
+            <input type="text" placeholder="Buscar Venta" class="search-bar">
+            <button class="btn-add">Iniciar Venta</button>
+        </div>
+    </div>
+
+    <!-- TABLA -->
+    <div class="table-scroll-container">
+        <table class="custom-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>ID Usuario</th>
+                    <th>Fecha</th>
+                    <th>ID Cliente</th>
+                    <th>Total</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody id="tabla-ventas"></tbody>
+        </table>
+    </div>
+<div id="confirmacion-simple">
+  <p>¿Querés eliminar la venta "<strong><span id="id-venta-eliminar"></span></strong>"?</p>
+  <button id="btn-si">Sí</button>
+  <button id="btn-no">No</button>
+</div>
+
+<!-- OVERLAY VENTAS -->
+<div id="overlay-venta" class="overlay-venta"></div>
+<div id="toast" class="toast"></div>
+<div id="confirm-dialog" class="confirm-dialog hidden">
+  <div class="confirm-content">
+    <p id="confirm-text"></p>
+    <div class="confirm-buttons">
+      <button id="btn-confirm-yes">Sí</button>
+      <button id="btn-confirm-no">No</button>
+    </div>
+  </div>
+</div>
+<!-- PANEL LATERAL VENTAS -->
+<div id="panel-venta" class="panel-venta">
+
+<div class="venta-left">
+
+  <!--CABECERA DE LA VENTA (ARRIBA DE TODO) -->
+  <div class="venta-header">
+      <h3>Datos de la Venta</h3>
+
+      <div class="venta-header-row">
+
+          <div>
+              <label>N° Venta:</label>
+              <span id="venta-nro">--</span>
+          </div>
+
+          <div>
+              <label>Fecha:</label>
+              <span id="venta-fecha"></span>
+          </div>
+
+          <div>
+              <label>Cliente:</label>
+              <select id="venta-select-cliente">
+                  <option value="1">Consumidor Final</option>
+              </select>
+          </div>
+
+          <button id="venta-btn-iniciar" class="btn-iniciar-venta">Iniciar</button>
+          <button id="venta-btn-cancelar" class="btn-cancelar-venta" disabled>Cancelar</button>
+
+      </div>
+  </div>
+  <!-- FIN CABECERA -->
+
+
+      <!--BUSCADOR (ABAJO DE CABECERA) -->
+      <div class="venta-search-container">
+        <input type="text" id="venta-buscar-productos" placeholder="Buscar productos" />
+        <button id="venta-btn-buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+
+      <!--TABLA PRODUCTOS -->
+      <div class="table-scroll-container">
+        <table class="venta-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Descripción</th>
+              <th>Stock</th>
+              <th>Precio</th>
+            </tr>
+          </thead>
+          <tbody id="venta-tabla-productos">
+            <!-- Productos -->
+          </tbody>
+        </table>
+      </div>
+
+      <!--AGREGAR PRODUCTO -->
+      <div class="venta-agregar-container">
+        <label>Producto: <span id="venta-producto-seleccionado">Ninguno</span></label>
+        <label>Cantidad: <input type="number" id="venta-cantidad-producto" min="1" step="0.01" value="1.00" /></label>
+        <button id="venta-btn-agregar-producto" class="btn-submit-venta">Agregar</button>
+      </div>
+  </div>
+
+  <div class="venta-right">
+
+      <!--CARRITO -->
+      <div id="venta-carrito" class="venta-carrito">
+
+        <h4>Cliente: 
+            <span id="venta-nombre-cliente">Consumidor Final</span> 
+        </h4>
+
+        <p>Deuda: <span id="venta-deuda-cliente">0</span></p>
+   <div class="table-scroll-container">
+        <table id="venta-tabla-carrito">
+            <thead>
+                <tr>
+                    <th>Cantidad</th>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+</div>
+<div class="venta-bottom">
+    <!-- Selector de forma de pago -->
+    <label>Forma de pago:</label>
+    <select id="venta-forma-pago">
+        <option value="">Seleccione...</option>
+    </select>
+    <input type="number" id="venta-monto-forma" placeholder="Monto" min="0" step="0.01" />
+    <button id="venta-btn-agregar-forma">Agregar</button>
+
+    <!-- Lista de formas de pago agregadas -->
+    <ul id="venta-lista-formas" class="lista-formas">
+        <!-- Aca se agregarán los pagos dinámicamente -->
+    </ul>
+
+    <!-- Totales -->
+    <div class="venta-total">
+        <p>Total:</p>
+        <p><span id="venta-total-venta">0</span>$</p>
+    </div>
+
+    <div class="venta-vuelto">
+        <p>Vuelto:</p>
+        <p><span id="venta-vuelto-venta">0</span>$</p>
+    </div>
+
+    <button id="venta-btn-finalizar" class="btn-submit-venta-fin">Finalizar</button>
+</div>
+
+</div>
+
+
+  <!--CERRAR PANEL -->
+  <button id="btn-cerrar-panel-venta" class="btn-close-venta">&times;</button>
+
+
+<!-- PANEL DEL TICKET -->
+<div id="ticket-panel" class="ticket-panel">
+    <div class="ticket-content" id="ticket-content"></div>
+    <button id="ticket-cerrar">Cerrar</button>
+</div>
+
+
+
+</body>

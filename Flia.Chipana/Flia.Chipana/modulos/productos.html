@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Productos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- CONTENEDOR PRINCIPAL -->
+<div class="module-container">
+
+    <!-- HEADER -->
+    <div class="module-header">
+        <h2>PRODUCTOS</h2>
+        <div class="search-add">
+            <input type="text" placeholder="Buscar producto" class="search-bar">
+            <button class="btn-add-producto">Agregar items</button>
+        </div>
+    </div>
+
+    <!-- TABLA -->
+    <div class="table-scroll-container">
+
+    <table class="custom-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Descripcion</th>
+                <th>Stock</th>
+                <th>ID Proveedor</th>
+                <th>Precio</th>
+                <th>Costo</th>
+                <th>Fecha Caducidad</th>
+                <th>Estado</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody id="tabla-productos"></tbody>
+    </table>
+    </div>
+</div>
+
+    <!-- PANEL LATERAL AGREGAR -->
+  <div id="overlay" class="overlay"></div>
+  <div id="panel-agregar" class="side-panel">
+    <div class="side-panel-header">
+      <h3><i class="fa-solid fa-user-plus"></i> Agregar Nuevo Producto</h3>
+      <button id="btn-cerrar-panel" class="btn-close">&times;</button>
+    </div>
+    <form id="form-agregar-producto" class="form-agregar">
+      <input type="text" name="descripcion" placeholder="Descripcion" required>
+
+      <input type="text"  oninput="validarNumero(this)"  name="stock" placeholder="Stock">
+<!-- Select para proveedor -->
+    <select id="id_proveedor" name="id_proveedor" class="form-input" required>
+      <option value="">Seleccionar proveedor...</option>
+    </select>
+      <input type="text" oninput="validarNumero(this)" name="precio" placeholder="Precio">
+      <input type="text"  oninput="validarNumero(this)" name="costo" placeholder="Costo">
+      <input type="date" name="fecha_cad" placeholder="Fecha Caducidad" required>
+      <button type="submit" class="btn-submit">Agregar</button>
+    </form>
+  </div>
+<div id="mensaje-toast"></div>
+
+<!-- PANEL LATERAL EDITAR -->
+<div id="panel-editar" class="side-panel">
+  <div class="side-panel-header">
+    <h3><i class="fa-solid fa-user-pen"></i> Editar Producto</h3>
+    <button id="btn-cerrar-panel-editar" class="btn-close">&times;</button>
+  </div>
+  <form id="form-editar-producto" class="form-agregar">
+    <input type="hidden" name="id_producto" />
+
+    <label for="descripcion">Descripción</label>
+    <input type="text" id="descripcion" name="descripcion" required>
+
+    <label for="stock">Stock</label>
+    <input type="text" id="stock" name="stock" oninput="validarNumero(this)">
+
+    <label for="id_proveedor_editar">Proveedor</label>
+    <select id="id_proveedor_editar" name="id_proveedor" required>
+      <option value="">Seleccionar proveedor...</option>
+    </select>
+
+    <label for="precio">Precio</label>
+    <input type="text" id="precio" name="precio" oninput="validarNumero(this)">
+
+    <label for="costo">Costo</label>
+    <input type="text" id="costo" name="costo" oninput="validarNumero(this)">
+
+    <label for="fecha_cad">Fecha de Caducidad</label>
+    <input type="date" id="fecha_cad" name="fecha_cad" required>
+
+    <button type="submit" class="btn-submit">Actualizar</button>
+  </form>
+</div>
+
+
+
+
+<div id="confirmacion-simple">
+  <p>¿Querés eliminar el producto?"<strong><span id="nombre-producto-eliminar"></span></strong>"?</p>
+  <button id="btn-si">Sí</button>
+  <button id="btn-no">No</button>
+</div>
+
+</body>
+</html>

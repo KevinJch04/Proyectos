@@ -1,0 +1,1364 @@
+/* ========================
+    ESCALADO PROPORCIONAL
+======================== */
+.scale-wrapper {
+    transform: scale(1);       
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+/* Escalado según el ancho de la pantalla */
+@media (max-width: 1600px) {
+    .scale-wrapper { transform: scale(0.9); }
+}
+
+@media (max-width: 1400px) {
+    .scale-wrapper { transform: scale(0.8); }
+}
+
+@media (max-width: 1200px) {
+    .scale-wrapper { transform: scale(0.7); }
+}
+
+@media (max-width: 800px) {
+    .scale-wrapper { transform: scale(0.6); }
+}
+/* ========================
+    LOGIN
+======================== */
+/* Todo el body */
+#body-login {
+    background-color: rgb(250, 250, 250);
+    font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+    height: 98vh;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Contenedor fijo del login */
+.container-login {
+    display: flex;
+    width: 930px;       
+    height: 550px;      
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+/* Panel del formulario */
+.container-login-form {
+    flex: 1;
+    background-color: white;
+    border-radius: 30px;
+    margin-right: -25px;  
+    position: relative; 
+    z-index: 2;
+}
+.container-login-form h1 {
+    font-size: 35px;
+    margin: 100px 0px 0px 80px;
+}
+.container-login-form p {
+    margin: 5px 0px 5px 80px;
+    font-size: 15px;
+}
+.campo {
+    width: 100%;
+    max-width: 280px;
+    padding: 10px;
+    margin: 30px 0px 5px 80px;
+    border: none;
+    border-bottom: 2px solid #0e0e0e;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+.campo::placeholder {
+    color: #999;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+/* Cuando el input está enfocado */
+.campo:focus::placeholder {
+    color: #0077b6;
+    font-size: 13px;
+    opacity: 0.7;
+}
+.password-container {
+    position: relative;
+}
+.toggle-icon {
+    position: absolute;
+    right: 70px;
+    top: 45px;
+    cursor: pointer;
+    font-size: 20px;
+    user-select: none;
+}
+.toggle-icon.hide {
+    display: none;
+}
+#btn-aceptar-login {
+    background: #b30000;
+    border: none;
+    padding: 12px 90px;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    margin: 30px 0px 5px 120px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+#btn-aceptar-login:hover {
+    background: linear-gradient(135deg, #e60000, #ff1a1a);
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25); /*sombra*/ 
+}
+/* -------------------------------------
+Mensajes de error al iniciar sesion
+------------------------------------- */
+.input-wrapper {
+    position: relative;
+    margin-bottom: -10px;
+}
+.error-field {
+    color: #ed4956;
+    font-size: 13px;
+    margin-top: 15px;
+    margin-left: 85px;
+    font-weight: bold;
+    animation: fadeIn 0.3s ease-in-out;
+}
+/* Animación sutil */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-3px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Panel del logo */
+.conteiner-login-logo {
+    flex: 1;
+    background-color: rgb(177, 7, 19);
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: center;
+    z-index: 1;
+}
+#patron-top,
+#patron-botton {
+    width: 100%;
+}
+#logo-inca {
+    width: 45%;
+    opacity: 0.3;
+}
+
+
+
+
+/* ==============================
+    ESCALADO PROPORCIONAL MAIN
+=================================*/
+.scale-wrapper-main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+/* ========================
+MAIN
+======================== */
+#body-main {
+    margin: 0;
+    display: flex;       
+    flex-direction: row; 
+    min-height: 100vh;
+    font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+    font-size: 15px;
+}
+/* panel lateral */
+.panel-navegacion {
+    position: relative;
+    background-color: rgb(177, 7, 19);
+    width: 280px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 1;
+}
+/* Contenedor para escalar contenido del panel lateral */
+.panel-content {
+    width: 100%;
+    transform-origin: top left;
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+#patron-top-main {
+    width: 100%;
+}
+#patron-botton-main {
+    width: 100%;
+    position: absolute; 
+    bottom: 0;
+}
+#logo-FliaChipana{
+    max-width: 75%;
+    margin-left: 12px;
+    margin-top: 20px;
+    height: auto;    
+    display: block;
+}
+/* panel principal */
+#main-principal {
+    flex: 1;            
+    padding: 20px;
+    background-color: #ffffff; 
+    box-sizing: border-box; 
+    position: relative; 
+    z-index: 2;
+    border-radius: 30px 0px 0px 30px;
+    margin-left: -30px;
+}
+/* Contenedor para escalar contenido del panel principal */
+.main-content {
+    width: 100%;
+    transform-origin: top left;
+    transition: transform 0.3s;
+}
+/* nav */
+nav {
+    display: flex;
+    flex-direction: column;
+    margin-top: 110px;
+}
+nav a {
+    display: flex;             
+    align-items: center;      
+    color: white;
+    text-decoration: none;
+    padding: 10px 55px;
+    margin-bottom: 10px;
+    transition: background 0.3s; 
+
+}
+nav a i {
+    margin-right: 15px;      
+}
+nav a:hover {
+    background-color: rgba(85, 4, 4, 0.2);
+    border-left: #ffffff solid 6px ;
+
+}
+/* ========================
+MEDIA QUERIES: escala y ajuste de fuentes/paddings
+======================== */
+/* hasta 1600px */
+@media (max-width: 1600px) { 
+    nav a { font-size: 16px; padding: 10px 40px; }
+    .panel-navegacion { width: 250px; }
+}
+/* hasta 1400px */
+@media (max-width: 1400px) {
+    nav a { font-size: 14px; padding: 8px 30px; }
+    .panel-navegacion { width: 220px; }
+}
+/* hasta 1200px */
+@media (max-width: 1200px) { 
+    nav a { font-size: 12px; padding: 8px 25px; }
+    .panel-navegacion { width: 200px; }
+
+    .panel-content, .main-content { transform: scale(0.9); }
+}
+/* hasta 1000px */
+@media (max-width: 1000px) { 
+    nav a { font-size: 10px; padding: 6px 20px; }
+    .panel-navegacion { width: 180px; }
+
+    .panel-content, .main-content { transform: scale(0.8); }
+}
+/* hasta 800px */
+@media (max-width: 800px)  { 
+    nav a { font-size: 110x; padding: 5px 15px; }
+    .panel-navegacion { width: 160px; }
+
+    .panel-content, .main-content { transform: scale(0.7); }
+}
+
+
+
+
+
+
+/*--------------------------------
+MODULOS
+---------------------------------- */
+
+.module-container{
+    background: #ffffff5d;
+    padding: 25px;
+    border-radius: 12px;
+    width: 95%;
+}
+
+.module-header {
+    display: flex;
+    flex-direction: column;
+    gap: 35px; 
+    margin-bottom: 40px;
+}
+
+.module-header h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.search-add {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.search-bar {
+    padding: 8px 10px;
+    width: 25%;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    outline: none;
+    background-color: #f3d1d1e1;
+    
+}
+
+
+/* TABLA */
+/* encabezado */
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+    
+}
+
+.custom-table th {
+    background: #ffe6e6;
+    color: rgb(177, 7, 19);
+    text-align: left;
+    padding: 7.5px;
+    font-weight: bold;
+    border-radius: 5px;
+    border-right: 2px solid white;
+
+}
+/* Para que el header de la tabla se quede fijo */
+.custom-table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+/* Filas */
+.custom-table tr:nth-child(even) {    
+    background-color: #e7e7e7;
+}
+
+.actions {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+
+}
+
+.btn-edit, .btn-delete {
+    border: none;
+    cursor: pointer;
+    padding: 3.5px;
+    border-radius: 6px;
+    font-size: 17px;
+    
+}
+
+.btn-edit {
+    background: #a6f3a7;
+    color: #2d6a3c;
+}
+
+.btn-edit:hover {
+    background: #30ec85;
+    color: #ffffff;
+
+}
+
+.btn-delete {
+    background: #f8c8c8;
+    color: #a4161a;
+}
+
+.btn-delete:hover {
+    background: #e63946;
+    color: #fff;
+}
+
+.table-scroll-container {
+    max-height: 390px; /* altura máxima de la tabla visible */
+    overflow-y: auto;  /* activa scroll vertical si hay más filas */
+}
+
+.table-scroll-container {
+    scrollbar-width: thin;                 /* barra más delgada */
+    scrollbar-color: #c1c1c1 #f0f0f0;     /* thumb y track */
+}
+/* mensaje de agregado exitosamente */
+#mensaje-toast{
+  position: fixed;
+  bottom: 20px;
+  right: 500px;
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  display: none;
+  font-weight: bold;
+  z-index: 9999;
+  transition: opacity 0.3s ease;
+}
+
+
+/* mensaje confirmación para eliminar a un cliente */
+#confirmacion-simple{
+  display:none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #f3d1d1;
+  padding: 20px;
+  border: 2px solid #4d4d4d;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  z-index: 9999;
+  text-align: center;
+}
+
+
+#btn-si,#btn-no {
+    padding: 5px 25px;
+    background-color:  #a4161a;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+#btn-si:hover {
+    transform: scale(1.1);
+    color: #ffffff;
+    background-color: #8b0000;
+}
+
+#btn-no:hover {
+    transform: scale(1.1);
+    color: #ffffff;
+}
+
+
+
+
+
+/* ========================
+PANEL LATERAL (oculto al inicio)
+======================== */
+.side-panel {
+    position: fixed;
+    top: 0;
+    right: -420px; /* ← lo mantiene oculto al inicio */
+    width: 340px;
+    height: 100vh;
+    background: #fff;
+    box-shadow: -3px 0 12px rgba(0, 0, 0, 0.15);
+    border-radius: 16px 0 0 16px;
+    padding: 0px;
+    transition: right 0.4s ease;
+    z-index: 1001;
+    overflow-y: auto;
+    flex-direction: column;}
+
+/* cuando se activa */
+.side-panel.active {
+    right: 0;
+}
+
+/* encabezado del panel */
+.side-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffe6e6;
+    padding: 15px 18px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 10px;
+    
+}
+
+.side-panel-header h3 {
+    color: #000000;
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    gap: 8px;
+}
+
+.btn-close {
+    border: none;
+    background: none;
+    font-size: 24px;
+    color: #000000;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.btn-close:hover {
+    transform: scale(1.2);
+    color: #b30000;
+}
+
+/* formulario dentro del panel */
+.form-agregar {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 30px;
+}
+
+.form-agregar label {
+    font-weight: bold;
+    color: #000000;
+    margin-top: -10px;
+    font-size: 14px;
+    margin-bottom: -21px;
+}
+
+.form-agregar input {
+    padding: 8px 8px;
+    border: 0.5px solid #ccc;
+    border-radius: 10px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+.form-agregar select {
+    padding: 8px 8px;
+    border: 0.5px solid #ccc;
+    border-radius: 10px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s ease;
+    background-color: white;
+}
+.form-agregar input:focus {
+    border-color:#fab3b3;
+}
+.form-agregar select:focus {
+    border-color:#fab3b3;
+}
+/* botón del formulario */
+.btn-submit {
+    background: #b10713;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 14px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-submit:hover {
+    background: #8e050f;
+    transform: translateY(-1px);
+    font-weight: bold;
+
+    
+}
+
+/* ========================
+   OVERLAY (oscurece el fondo)
+======================== */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    z-index: 1000;
+}
+
+.overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* ========================
+   BOTÓN "Agregar items"
+======================== */
+.btn-add,
+.btn-add-producto {
+    background: #b10713;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 18px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-add:hover {
+    background: #8e050f;
+    transform: translateY(-1px);
+    font-weight: bold;
+
+}
+
+
+
+
+
+
+/* --------------------------- */
+/* consultas */
+/* ---------------------------- */
+
+.consultas-container {
+    padding: 20px;
+    text-align: center;
+}
+
+.tarjetas-consultas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.tarjeta-consulta {
+    width: 220px;
+    height: 140px;
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tarjeta-consulta:hover {
+    transform: scale(1.05);
+    border-color: #f02f2fc4;
+}
+
+.consulta-detalle {
+    margin-top: 10px;
+    padding: 10px;
+}
+
+/* estilo de las consultas, adentro */
+
+/* --- Botón Volver --- */
+.btn-volver {
+    display: inline-block;
+    background: transparent;
+    color: #b10713;
+    border: 2px solid #b10713;
+    border-radius: 8px;
+    padding: 7px 15px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.btn-volver:hover {
+    background: #b10713;
+    color: #fff;
+}
+
+/* --- Encabezado --- */
+#consulta-detalle h3 {
+    color: #b10713;
+    margin-bottom: 20px;
+    font-size: 1.7em;
+}
+
+/* --- Formularios de consulta (inputs y labels) --- */
+.form-consulta {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.form-consulta label {
+    font-weight: 600;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    text-align: left;
+}
+
+.form-consulta input[type="date"],
+.form-consulta input[type="number"],
+.form-consulta input[type="text"] {
+    margin-top: 5px;
+    padding: 7px 7px;
+    border: 1.5px solid #cccccc;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    min-width: 160px;
+    text-align: center;
+}
+
+.form-consulta input:focus {
+    border-color: #b10713;
+    box-shadow: 0 0 5px rgba(177, 7, 19, 0.3);
+    outline: none;
+}
+/* --- Botones principales (Consultar) --- */
+#consulta-detalle button:not(.btn-volver) {
+    background: #b10713;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+#consulta-detalle button:not(.btn-volver):hover {
+    background: #e63946;
+}
+
+/* --- Espaciado del resultado --- */
+#resultado {
+    margin-top: 30px;
+}
+
+
+
+
+/* 
+----------------------------------------------
+DETALLE DE VENTAS 
+--------------------------------------------- */
+
+
+
+/* Overlay */
+#overlay-venta {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+  z-index: 9000;
+}
+
+#overlay-venta.active {
+  display: block;
+}
+
+/* Panel principal */
+#panel-venta {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 86%;
+  height: 100vh;
+  background: white;
+  box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 10000;
+  
+  display: flex;
+  font-family: 'Roboto', Arial, sans-serif;
+  color: #111;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  overflow: hidden;
+}
+
+#panel-venta.active {
+  transform: translateX(0);
+}
+
+/* Ocultar header */
+.panel-venta-header {
+  display: none;
+}
+
+/* Contenedor columnas */
+
+.venta-left {
+    flex: 2;
+    padding: 20px 15px;
+    box-sizing: border-box;
+    width: 800px;
+    border-right: 1px solid #E1BDBD;
+    display: flex;
+    flex-direction: column;
+}
+
+.venta-right {
+    flex: 1;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-left: 25px;
+}
+
+/* Buscador */
+.venta-search-container {
+    margin-top: 15px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.venta-search-container input {
+  width: 40%;
+  padding: 9px 15px;
+  border-radius: 20px;
+  border: 1px solid #d6d5d5;
+  background: #f3d1d1e1;
+  font-weight: 600;
+  font-size: 13px;
+  color: #111;
+  outline: none;
+}
+
+.venta-search-container button {
+  position: absolute;
+  top: 50%;
+  right: 57%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  color: #7a7777;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+/* Tabla productos */
+.venta-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+    
+}
+
+.venta-table thead tr th {
+    background: #ffe6e6;
+    color: rgb(177, 7, 19);
+    text-align: left;
+    padding: 7.5px;
+    font-weight: bold;
+    border-radius: 5px;
+    border-right: 2px solid white;
+}
+
+.venta-table tbody tr {
+  background: #FAFAFA;
+  border-radius: 8px;
+}
+
+.venta-table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+/* Filas */
+.venta-table tr:nth-child(even) {     
+    background-color: #e7e7e7;
+}
+.venta-table tbody tr td {
+  padding: 8px 15px;
+  vertical-align: middle;
+  color: #444444;
+}
+
+/* Producto y cantidad */
+.venta-agregar-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+/* Poner texto y span/input en línea */
+.venta-agregar-container label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+}
+
+/* Botón al lado del input */
+#venta-cantidad-producto {
+  width: 80px;
+  padding: 6px 10px;
+  border-radius: 12px;
+  border: 1.5px solid #BEBEBE;
+  font-weight: 600;
+  font-size: 14px;
+  outline: none;
+}
+
+.btn-submit-venta {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+  margin-left: 200px; 
+  margin-top: -40px;
+  align-self: flex-start; 
+}
+
+.btn-submit-venta:hover {
+  background-color: #3a9b3d;
+}
+
+/* Carrito derecho */
+.venta-carrito {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  color: #111;
+  overflow-y: auto;
+}
+
+.venta-carrito h4 {
+    margin-top: -1px;
+  font-weight: 700;
+  margin-bottom: 0px;
+  font-size: 16px;
+}
+
+.venta-carrito p {
+  font-weight: 600;
+  font-size: 14.5px;
+  margin-bottom: 10px;
+}
+
+/* Tabla carrito */
+#venta-tabla-carrito {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0px;
+  font-size: 13px;
+  /* flex-grow: 1; */
+  overflow-y: auto;
+}
+#venta-tabla-carrito thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+#venta-tabla-carrito thead tr th {
+    background: #ffe6e6;
+    color: rgb(177, 7, 19);
+    text-align: left;
+    padding: 7.5px;
+    font-weight: bold;
+    border-radius: 5px;
+    border-right: 2px solid white;
+}
+
+#venta-tabla-carrito tbody tr {
+  background: #f1efef;
+  border-radius: 8px;
+}
+
+#venta-tabla-carrito tbody tr td {
+  padding: 1.2px 15px;
+  vertical-align: middle;
+  color: #272727;
+}
+/* Filas */
+#venta-tabla-carrito tr:nth-child(even) {     
+    background-color: #e7e7e7;
+}
+
+#venta-tabla-carrito tbody tr td:last-child {
+  text-align: center;
+}
+
+/* Botón eliminar */
+#venta-tabla-carrito tbody tr td .btn-eliminar {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #e04848;
+  font-size: 18px;
+}
+.venta-bottom {
+    margin-top: auto;      
+    display: flex;
+    flex-direction: column;
+    gap: 10px;            
+}
+
+
+/* Botón cerrar */
+.btn-close-venta {
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #111;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-weight: 700;
+  z-index: 10001;
+}
+
+
+#venta-tabla-productos tr.selected {
+    background-color: #ffc5c5 !important;
+    transition: 0.15s;
+}
+
+
+
+
+
+
+
+/* CABEZERA */
+
+.venta-header {
+    background: #fae0e0;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.venta-header-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.venta-header label {
+    font-weight: bold;
+}
+
+.btn-iniciar-venta {
+    background: #49a54c;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-cancelar-venta {
+    background: #af3c38;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-iniciar-venta:hover {
+    background: #1e8521;
+    font-weight: bold;
+
+}
+
+.btn-cancelar-venta:hover {
+     background: #851e1e;
+    font-weight: bold;
+}
+
+.oculto {
+    display: none !important;
+}
+
+
+
+
+.toast {
+    position: fixed;
+    top: 90%;       
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    z-index: 20000;
+}
+/* Opcional: colores según tipo de mensaje */
+.toast.success { background-color: #4CAF50; }  
+.toast.error { background-color: #f44336; }    
+.toast.info { background-color: #2196F3; }   
+
+
+
+.confirm-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20000;
+}
+
+.confirm-dialog.hidden {
+  display: none;
+}
+
+.confirm-content {
+  background:#f3d1d1;
+  color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 5px #000;
+  max-width: 320px;
+  text-align: center;
+  font-size: 15px;
+
+}
+
+.confirm-buttons {
+  margin-top: 20px;
+}
+
+.confirm-buttons button {
+  margin: 0 15px;
+  padding: 7px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#btn-confirm-yes {
+  background-color: #4CAF50;
+  color: white;
+}
+
+#btn-confirm-yes:hover {
+  background-color: #45a049;
+}
+
+#btn-confirm-no {
+  background-color: #f44336;
+  color: white;
+}
+
+#btn-confirm-no:hover {
+  background-color: #da2e2e;
+}
+
+
+
+#venta-select-cliente {
+  padding: 8px 10px;
+  font-size: 15px;
+  border: none;              
+  border-bottom: 2px solid #cc8d8d;  
+  background-color: transparent; 
+  box-shadow: none;          
+  transition: border-color 0.3s ease;
+  cursor: pointer;
+  outline: none;
+  min-width: 20px;
+}
+
+#venta-select-cliente:hover {
+  border-bottom-color: #9b1717;
+}
+
+
+
+
+
+.ticket-panel {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: #00000080;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 5000;
+}
+.ticket-content {
+    background: white;
+    padding: 20px;
+    width: 350px;
+    font-family: monospace;
+    border-radius: 5px;
+}
+.ticket-content h2 {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+
+
+
+/* Contenedor general de formas de pago */
+.venta-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Formulario de agregar forma de pago */
+.venta-bottom label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.venta-bottom select,
+.venta-bottom input[type="number"] {
+    padding: 5px 8px;
+    margin-right: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.venta-bottom button#venta-btn-agregar-forma {
+    padding: 6px 5px;
+    border: none;
+    background-color: #4caf50;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.venta-bottom button#venta-btn-agregar-forma:hover {
+    background-color: #45a049;
+}
+
+/* Lista de formas agregadas */
+.lista-formas {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 120px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+.lista-formas li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 10px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+.lista-formas li:last-child {
+    border-bottom: none;
+}
+
+.lista-formas li button {
+    background: none;
+    border: none;
+    color: #ff4d4f;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Totales */
+.venta-total  {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-bottom: -25px;
+       margin-top: -15px;
+}
+.venta-total p {
+font-size: 18px;
+}
+.venta-vuelto  {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+.venta-vuelto p  {
+font-size: 15px;
+}
+/* Botón Finalizar */
+button#venta-btn-finalizar {
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button#venta-btn-finalizar:hover {
+    background-color: #0069d9;
+}

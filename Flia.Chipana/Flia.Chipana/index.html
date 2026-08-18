@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Flia Chipana</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="body-login">
+
+<div class="scale-wrapper">
+    <div class="container-login">
+        <div class="container-login-form">
+            <h1>Login</h1>
+            <p>Ingrese los datos solicitados</p>
+
+            <form id="login-form">
+                <div class="input-wrapper">
+                    <input type="text" id="nombre" name="nombre" class="campo" placeholder="Nombre" required>
+                </div>
+
+                <div class="input-wrapper password-container">
+                    <input type="password" id="password" name="password" class="campo" placeholder="Contraseña" required>
+                        <!-- mostrar y ocultar contraseña -->
+                    <i id="show" class="fa-solid fa-eye toggle-icon"></i>
+                    <i id="hide" class="fa-solid fa-eye-slash toggle-icon hide"></i>
+                </div>
+                <div id="error-message" class="error-field"></div>
+                <br>
+                <button id="btn-aceptar-login" type="submit">Aceptar</button>
+            </form>
+        </div>
+
+        <div class="conteiner-login-logo">
+            <img src="resources/login/patron.png" alt="Patron" id="patron-top">
+            <img src="resources/login/logo.png" alt="bichito" id="logo-inca">
+            <img src="resources/login/patron.png" alt="Patron" id="patron-botton">
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+
+<script src="js/login.js"></script>
+<script src="js/config.js"></script>
+<!-- esto hace que funcionen los iconos para ocultar y mostrar la Contraseña -->
+<script>
+    const password = document.getElementById("password");
+    const show = document.getElementById("show");
+    const hide = document.getElementById("hide");
+
+    show.addEventListener("click", () => {
+        password.type = "text";
+        show.classList.add("hide");
+        hide.classList.remove("hide");
+    });
+
+    hide.addEventListener("click", () => {
+        password.type = "password";
+        hide.classList.add("hide");
+        show.classList.remove("hide");
+    });
+</script>
+</body>
+</html>
+
