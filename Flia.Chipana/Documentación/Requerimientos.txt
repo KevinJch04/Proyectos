@@ -1,0 +1,53 @@
+Requerimientos de Dominio:
+El sistema debe integrar métodos de pago como Mercadopago, Modo, Billetera Santa fe y débito.
+Cada producto tiene un único código de identificación.
+
+Requerimientos Funcionales:
+El sistema debe mostrar un listado completo de todos los productos disponibles en el kiosco.
+
+Producto(ABM)
+El sistema debe permitir ingresar nuevos productos con sus datos correspondientes como nombre, precio, Id_proveedor, código de barras, fecha de caducidad, stock.
+El sistema debe permitir eliminar un producto con confirmación.
+El sistema debe permitir editar datos de productos existentes.
+
+Proveedores(ABM)
+El sistema debe permitir ingresar nuevos proveedores con sus datos correspondientes como  id_proveedor y nombre.
+El sistema debe permitir eliminar un proveedor con confirmación.
+El sistema debe permitir editar datos de un proveedor existente.
+
+Usuarios(ABM)
+El sistema debe permitir ingresar nuevos usuarios con sus datos correspondientes como  id_usuario, nombre y contraseña.
+El sistema debe permitir eliminar un empleado con confirmación.
+El sistema debe permitir editar datos de un empleado existente.
+
+     - Métodos de Pago (ABM)
+El sistema debe permitir ingresar nuevos métodos de pago con sus datos correspondientes, como id_método, descripción.
+El sistema debe permitir eliminar un método de pago con confirmación.
+El sistema debe permitir editar los datos de un método de pago existente.
+
+    -Descuentos(ABM)
+El sistema debe permitir ingresar nuevos descuentos con sus datos correspondientes, como id_descuento, descripción, porcentaje.
+El sistema debe permitir eliminar un descuento con confirmación.
+El sistema debe permitir editar los datos de un descuento existente.
+El sistema debe permitir ingresar nuevos métodos de pago con sus datos correspondientes, como nombre del método (por ejemplo: efectivo, tarjeta de crédito, transferencia, etc.).
+
+El sistema debe permitir eliminar un método de pago con confirmación.
+
+El sistema debe permitir editar los datos de un método de pago existente.
+
+El sistema debe permitir registrar las ventas realizadas en un día y generar un reporte detallado de las mismas.
+El sistema debe calcular y mostrar cuánto se ganó en total en un periodo de tiempo determinado.
+El sistema debe generar un registro de todas las actualizaciones de precios realizadas.
+El sistema debe poder distinguir entre un inicio de sesión realizado por un administrador y uno realizado por un empleado para asignar los permisos adecuados según el rol del usuario.
+El sistema debe permitir al administrador gestionar el inventario.
+El sistema debe imprimir tickets de venta.
+El sistema debe permitir aumentar de manera masiva los precios de los productos asignados a un proveedor específico.
+
+El sistema debe permitir aplicar un porcentaje de descuento a los productos sin modificar el precio original.
+
+Requerimientos No Funcionales: 
+El sistema debe operar con tiempos de respuesta rápidos y un uso de recursos óptimo incluso durante períodos de alta demanda.
+El sistema debe gestionar el inventario con actualización precisa y en tiempo real de las existencias de productos.
+El sistema debe mostrar de manera clara y concisa la información relevante de cada producto, incluyendo nombre, descripción, precio y disponibilidad. 
+El sistema debe responder en menos de 3 segundos. 
+
