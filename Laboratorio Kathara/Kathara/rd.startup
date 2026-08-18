@@ -1,0 +1,8 @@
+ip a add 172.22.7.254/21 dev eth0
+ip a add 192.168.111.30/30 dev eth1
+ip a add 192.168.111.34/30 dev eth2
+ip a add 192.168.111.89/30 dev eth3
+
+systemctl start quagga
+systemctl start bind9
+systemctl start isc-dhcp-server

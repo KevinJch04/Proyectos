@@ -1,0 +1,4 @@
+ip a add 192.168.128.1/29 dev eth0
+ip r add default via 192.168.128.6
+
+systemctl start bind9

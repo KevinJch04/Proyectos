@@ -1,0 +1,7 @@
+ip a add 192.168.8.14/28 dev eth0
+ip a add 192.168.111.78/30 dev eth1
+ip a add 192.168.111.73/30 dev eth2
+ip a add 192.168.111.90/30 dev eth3
+
+systemctl start quagga
+systemctl start bind9

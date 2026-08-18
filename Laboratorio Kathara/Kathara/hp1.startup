@@ -1,0 +1,4 @@
+ip a add 10.0.0.1/24 dev eth0
+ip r add default via 10.0.0.254
+
+systemctl start bind9
