@@ -1,0 +1,12 @@
+$TTL 60000
+@   IN  SOA chipana.izo. admin.chipana.izo. (
+        2025111301 ; Serial
+        12h        ; Refresh
+        15m        ; Retry
+        3w         ; Expire
+        2h )       ; Minimum
+
+@   IN  NS chipana.izo.
+
+254.127 IN PTR rij1.chipana.izo.
+1.0 IN PTR hj1.chipana.izo.

@@ -1,0 +1,87 @@
+//
+// Do any local configuration here
+//
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+zone "chipana.izo" {
+    type master;
+    file "/etc/bind/db.chipana.izo";
+};
+zone "10.in-addr.arpa"{
+        type master;
+        file "/etc/bind/db.10";
+};
+zone "238.168.192.in-addr.arpa"{
+        type master;
+        file "/etc/bind/db.192.168.238";
+};
+zone "16.172.in-addr.arpa"{
+        type master;
+        file "/etc/bind/db.172.16";
+};
+zone "22.172.in-addr.arpa"{
+        type master;
+        file "/etc/bind/db.172.22";
+};
+zone "20.172.in-addr.arpa"{
+        type master;
+        file "/etc/bind/db.172.20";
+};
+zone "128.168.192.in-addr.arpa"{
+        type master;
+        file "/etc/bind/db.192.168.128";
+};
+zone "32.168.192.in-addr.arpa"{
+        type master;
+        file "/etc/bind/db.192.168.32";
+};
+zone "30.172.in-addr.arpa"{
+        type master;
+        file "/etc/bind/db.172.30";
+};
+zone "10.10.in-addr.arpa"{
+        type master;
+        file "/etc/bind/db.10.10";
+};
+zone "0.111.10.in-addr.arpa"{
+        type master;
+        file "/etc/bind/db.10.111.0";
+};
+zone "29.172.in-addr.arpa"{
+        type master;
+        file "/etc/bind/db.172.29";
+};
+zone "31.172.in-addr.arpa"{
+        type master;
+        file "/etc/bind/db.172.31";
+};
+zone "1.168.192.in-addr.arpa"{
+        type master;
+        file "/etc/bind/db.192.168.1";
+};
+zone "8.168.192.in-addr.arpa"{
+        type master;
+        file "/etc/bind/db.192.168.8";
+};
+zone "0.64.10.in-addr.arpa"{
+        type master;
+        file "/etc/bind/db.10.64.0";
+};
+zone "0.0.10.in-addr.arpa"{
+        type master;
+        file "/etc/bind/db.10.0.0";
+};
+zone "0.19.172.in-addr.arpa"{
+        type master;
+        file "/etc/bind/db.172.19.0";
+};
+zone "0.27.172.in-addr.arpa"{
+        type master;
+        file "/etc/bind/db.172.27.0";
+};
+zone "111.168.192.in-addr.arpa"{
+        type master;
+        file "/etc/bind/db.192.168.111";
+};

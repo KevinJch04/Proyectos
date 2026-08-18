@@ -1,0 +1,56 @@
+$TTL 60000
+@   IN  SOA chipana.izo. admin.chipana.izo. (
+        2025111301 ; Serial
+        12h        ; Refresh
+        15m        ; Retry
+        3w         ; Expire
+        2h )       ; Minimum
+
+@   IN  NS chipana.izo.
+
+5 IN PTR ra1.chipana.izo.
+1 IN PTR ra2.chipana.izo.
+9 IN PTR ra3.chipana.izo.
+25 IN PTR rb1.chipana.izo.
+2 IN PTR rb2.chipana.izo.
+21 IN PTR rb3.chipana.izo.
+26 IN PTR rc1.chipana.izo.
+29 IN PTR rc2.chipana.izo.
+50 IN PTR rc3.chipana.izo.
+30 IN PTR rd1.chipana.izo.
+34 IN PTR rd2.chipana.izo.
+89 IN PTR rd3.chipana.izo.
+22 IN PTR re1.chipana.izo.
+33 IN PTR re2.chipana.izo.
+41 IN PTR re3.chipana.izo.
+6 IN PTR rf1.chipana.izo.
+18 IN PTR rf2.chipana.izo.
+37 IN PTR rf3.chipana.izo.
+13 IN PTR rg1.chipana.izo.
+17 IN PTR rg2.chipana.izo.
+85 IN PTR rg3.chipana.izo.
+10 IN PTR rh1.chipana.izo.
+14 IN PTR rh2.chipana.izo.
+45 IN PTR rh3.chipana.izo.
+54 IN PTR rij2.chipana.izo.
+81 IN PTR rij3.chipana.izo.
+46 IN PTR rij4.chipana.izo.
+49 IN PTR rij5.chipana.izo.
+38 IN PTR rkl2.chipana.izo.
+65 IN PTR rkl3.chipana.izo.
+70 IN PTR rkl4.chipana.izo.
+42 IN PTR rkl5.chipana.izo.
+74 IN PTR rm1.chipana.izo.
+69 IN PTR rm2.chipana.izo.
+78 IN PTR rn1.chipana.izo.
+73 IN PTR rn2.chipana.izo.
+90 IN PTR rn3.chipana.izo.
+82 IN PTR ro1.chipana.izo.
+77 IN PTR ro2.chipana.izo.
+58 IN PTR rp1.chipana.izo.
+53 IN PTR rp2.chipana.izo.
+62 IN PTR rq1.chipana.izo.
+57 IN PTR rq2.chipana.izo.
+86 IN PTR rq3.chipana.izo.
+66 IN PTR rr1.chipana.izo.
+61 IN PTR rr2.chipana.izo.
