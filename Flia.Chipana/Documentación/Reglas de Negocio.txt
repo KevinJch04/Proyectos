@@ -1,0 +1,12 @@
+Hechos:
+El cliente siempre es atendido por un empleado.
+Todos los empleados tienen una cuenta única en el sistema.
+El dueño del negocio tiene una cuenta única como administrador.
+Solamente el administrador puede modificar los productos.
+El sistema permite el cobro de las ventas mediantes diversos medios de pago (Mercadopago, Modo, Billetera Santa fe y débito).
+
+Restricciones:
+La cuenta de los empleados no puede actualizar la información de los productos y tampoco acceder a documentos propios del administrador.
+
+Acción disparadora:
+Al finalizar la venta se imprime un ticket no fiscal. 
